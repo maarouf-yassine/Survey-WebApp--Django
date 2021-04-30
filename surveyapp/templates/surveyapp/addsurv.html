@@ -1,0 +1,27 @@
+{% extends "surveyapp/base.html" %}
+{% block body %}
+<form method="post">
+  {% csrf_token %}
+  <div class="add-category">
+    <div class="add-box">
+      <input type="text" name="title" placeholder="title">
+    </div>
+    <div class="add-box">
+      <input type="text" name="subtitle" placeholder="subtitle">
+    </div>
+    <div class="add-box">
+      <select name="category">
+        {% for c in category %}
+        <option value=”{{c.category_name}}”>{{c.category_name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="add-box">
+      <input type="text" name="question" placeholder="question">
+    </div>
+    <div class="add-box">
+      <input type="submit" value="Create Survey">
+    </div>
+  </div>
+</form>
+{% endblock %}

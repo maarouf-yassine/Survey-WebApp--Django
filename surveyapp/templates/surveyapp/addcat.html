@@ -1,0 +1,17 @@
+{% extends "surveyapp/base.html" %}
+{% block body %}
+<form method="post" action="{% url 'addcat' %}">
+  {% csrf_token %}
+  <div class="add-category">
+    <div class="add-box">
+      <input type="text" placeholder="category name" name="category">
+    </div>
+    <div class="add-box">
+      <input type="text" placeholder="icon(e.g: fas-{input})" name="icon">
+    </div>
+    <div class="add-box">
+      <input type="submit" value="Create Category">
+    </div>
+  </div>
+</form>
+{% endblock %}

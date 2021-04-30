@@ -1,0 +1,72 @@
+{% extends "surveyapp/base.html" %}
+{% block body %}
+
+<div class="title">
+  <h1>{{survey.title_name}} Survey Result's Report</h1>
+  <div class="result-container">
+    <h2>Congrats! you just gained 1 point!</h2>
+    <h4>{{people}} other respondants took this survey</h4>
+  </div>
+</div>
+
+<div class="question-container">
+  <div class="question">
+    <div class="question-title">
+      <p>{{question}}</p>
+    </div>
+    <hr>
+    <div class="voting-container">
+      <div class="radio-result">
+        <div class="radio-button">
+          <label>Strongly Agree</label>
+          <!--        <input type="radio" name="choice" value="Strongly Agree" id="a" disabled>-->
+
+        </div>
+        <div class="radio-button">
+          <label>Agree</label>
+          <!--        <input type="radio" name="choice" value="Agree" id="b" disabled>-->
+
+        </div>
+        <div class="radio-button">
+          <label>Neutral</label>
+          <!--        <input type="radio" name="choice" value="neutral" id="c" disabled>-->
+
+        </div>
+        <div class="radio-button">
+          <label>Disagree</label>
+          <!--        <input type="radio" name="choice" value="disagree" id="d" disabled>-->
+
+        </div>
+        <div class="radio-button">
+          <label>Strongly Disagree</label>
+          <!--        <input type="radio" name="choice" value="strongly disagree" id="e" disabled>-->
+        </div>
+
+      </div>
+      <div class="votes">
+        <div class="answers">{{stronglya}} votes</div>
+        <div class="answers">{{agree}} votes</div>
+        <div class="answers">{{neutral}} votes</div>
+        <div class="answers">{{disagree}} votes</div>
+        <div class="answers">{{stronglyd}} votes</div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div class="submit-button">
+  <a href="{% url 'index' %}">
+    <input type="submit" value="Back to Home">
+  </a>
+
+
+</div>
+
+
+
+
+
+{% endblock %}

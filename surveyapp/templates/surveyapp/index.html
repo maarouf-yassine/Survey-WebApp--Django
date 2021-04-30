@@ -1,0 +1,30 @@
+{% extends "surveyapp/base.html" %}
+{% block body %}
+
+<div class="title">
+  <h1>Welcome to the Survey App!</h1>
+  <h3>Select a topic to take a survey</h3>
+</div>
+
+
+<div class="category-container">
+  {% for c in categories %}
+  <a href="{% url 'surveys' c.id %}">
+    <div class="categories">
+      <h3>{{c.category_name}}</h3>
+      <i class="icon {{c.icon}} fa-5x"></i>
+    </div>
+  </a>
+  {% endfor %}
+
+</div>
+
+
+<section>
+  <div class="wave wave1"></div>
+  <div class="wave wave2"></div>
+  <div class="wave wave3"></div>
+  <div class="wave wave4"></div>
+</section>
+
+{% endblock %}

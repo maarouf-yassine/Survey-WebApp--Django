@@ -1,0 +1,25 @@
+{% extends "surveyapp/base.html" %}
+{% block body %}
+<form method="post">
+  {% csrf_token %}
+  <div class="add-category">
+
+    <div class="add-box">
+      <select name="survey">
+        {% for s in survey %}
+        <option value=”{{s.id}}”>{{s.title_name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="add-box">
+      <input type="text" name="new" placeholder="new question">
+    </div>
+    <div class="add-box">
+      <input type="submit" value="Update Survey" required>
+
+    </div>
+      {{updated}} {{message}}
+
+  </div>
+</form>
+{% endblock %}

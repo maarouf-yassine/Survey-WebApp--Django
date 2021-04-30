@@ -1,0 +1,20 @@
+{% extends "surveyapp/base.html" %}
+{% block body %}
+<form method="post">
+  {% csrf_token %}
+  <div class="add-category">
+
+    <div class="add-box">
+      <select name="categorydelete">
+        {% for c in categories %}
+        <option value=”{{c.category_name}}”>{{c.category_name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="add-box">
+      <input type="submit" value="Delete">
+    </div>
+
+  </div>
+</form>
+{% endblock %}

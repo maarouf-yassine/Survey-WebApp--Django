@@ -1,0 +1,30 @@
+
+{% extends "surveyapp/base.html" %}
+{% block body %}
+
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Login</h1>
+			</div>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="password">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+				<input type="submit" class="btn" value="Login">
+				<a class="create-link" href="{% url 'signup' %}">Don't have an account?</a>
+			</div>
+        </form>
+		</div>
+	</div>
+
+{% endblock %}

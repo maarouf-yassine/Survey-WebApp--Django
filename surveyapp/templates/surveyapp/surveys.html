@@ -1,0 +1,35 @@
+{% extends "surveyapp/base.html" %}
+{% block body %}
+
+
+<div class="title">
+  <h1>Select a Survey to begin</h1>
+  <p class="points">{{request.user.points}} Current Point(s)</p>
+</div>
+
+<div class="survey-topics">
+  {% for s in surveys %}
+  <div class="topic">
+    <h3>{{s.title_name}}</h3>
+    <p>{{s.subtitle}}</p>
+    <a href="{% url 'singlesurvey' s.id %}">
+      <input type="button" value="Take Survey" class="survey-button">
+    </a>
+  </div>
+
+  {% endfor %}
+
+
+</div>
+
+<div class="participants">
+  Users that participated in this category:
+  <hr>
+  {% for u in users %}
+  <div class="names">
+    {{u}}
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

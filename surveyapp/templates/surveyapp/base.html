@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} Surveyor {% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/fad6e48f21.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="{% url 'index' %}" class="name">Surveyor</a>
+
+    <div class="nav">
+      <a href="{% url 'index' %}">Home</a>
+
+      {% if user.is_authenticated %}
+      <a href="{% url 'addcat' %}">Add Category</a>
+      <a href="{% url 'addsurv' %}">Add Survey</a>
+      <a href="{% url 'deletecat' %}">Delete Category</a>
+      <a href="{% url 'deletesurv' %}">Delete Survey</a>
+      <a href="{% url 'update' %}">Edit Survey</a>
+
+
+      <a href="{% url 'logout' %}">Log out</a>
+      {% else %}
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'signup' %}">Sign Up</a>
+      {% endif %}
+
+
+
+    </div>
+  </div>
+
+
+
+  {%block body%}
+  {% endblock %}
+</body>
+
+</html>
