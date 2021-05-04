@@ -45,6 +45,7 @@ def login_view(request):
             login(request, user)
             return HttpResponseRedirect(reverse("index"))
         else:
+            print("Error reached!")
             return render(request, "surveyapp/login.html", {"message": "Invalid Username or password."})
     else:
         return render(request, "surveyapp/login.html")
