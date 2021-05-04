@@ -380,11 +380,11 @@ input {
   text-decoration: underline;
 }
 
-
-
-
-
-
+.invalid {
+  text-align: center;
+  color: white;
+  margin: 10px;
+}
 
 
 /* Survey Pages */
