@@ -32,5 +32,5 @@ To run this application, make sure to first be in the correct directtory in your
 ```
 > python manage.py makemigrations
 > python manage.py migrate
-> python manage.py runserver 0.0.0.0:8000
+> python manage.py runserver
 ```
