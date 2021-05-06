@@ -10,7 +10,7 @@ The survey can be found on https://github.com/maarouf-yassine/Survey-WebApp--Dja
 <br/>
 Users of our application could add and delete Surveys and Categories.
 <br/>
-When adding a category, you can use the following website to find icons: https://fontawesome.com/icons choose the icon and add it in the form of --> fas fa-utensils
+When adding a category, you can use the following website to find icons: https://fontawesome.com/icons choose the icon and add it in the form of the following example, fas fa-utensils
 <br/>
 <br/>
 After completing a survey, users will gain an extra point, and they be prompted to a report page that summarizes the answers on this specific survey.
